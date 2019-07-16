@@ -59,4 +59,16 @@ script:
                     --with-debug
     - make
     - ls -al
+    - tar -zcvf nginx.tar.gz nginx-1.17.1
+
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key: $GH_TOKEN
+  file_glob: true
+  file:
+    - "nginx.tar.gz"
+  on:
+    tags: true
             
