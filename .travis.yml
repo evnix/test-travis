@@ -57,4 +57,6 @@ script:
                     --with-openssl=../openssl-1.1.1a \
                     --with-openssl-opt=no-nextprotoneg \
                     --with-debug
+    - make
+    - ls -al
             
